@@ -5,7 +5,7 @@ const errorHandler = require("./middlewares/error.middleware");
 const app = express();
 
 app.use(express.json());   // MUST be here
-app.use("/task", taskRoutes);
+app.use("/tasks", taskRoutes);
 app.use(errorHandler);
 
 
