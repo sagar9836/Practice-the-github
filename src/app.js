@@ -16,6 +16,12 @@ function logRequests(req, res, next) {
 console.log("Logging middleware added");
 app.use(logRequests);
 
+function logErrors(err, req, res, next) {
+    console.error(err.stack);
+    next(err);
+}   
+app.use(logErrors);
+
 console.log("Task Manager API is running...");
 module.exports = app;
  
