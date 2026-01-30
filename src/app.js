@@ -5,7 +5,7 @@ const errorHandler = require("./middlewares/error.middleware");
 const app = express();
 
 app.use(express.json());   // MUST be here
-app.use("/tasks", taskRoutes);
+app.use("/tasks ", taskRoutes);
 app.use(errorHandler);
 
 
@@ -13,6 +13,7 @@ function logRequests(req, res, next) {
     console.log(`${req.method} ${req.url}`);
     next();
 }
+console.log("Logging middleware added");
 app.use(logRequests);
 
 console.log("Task Manager API is running...");
